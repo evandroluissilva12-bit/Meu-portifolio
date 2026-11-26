@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=BBH+Bogle&family=Black+Ops+One&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Black Ops One", system-ui;
+}
+body{
+    display: flex;
+    min-width: 100vh;
+    background-color: rgb(100, 148, 237);
+}
+main{
+    padding: 20px;
+}
+#sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #fdfdfd;
+    height: 100vh;
+    border-radius: 0px 18px 18px 0px;
+    position: relative;
+    transition: all .5s;
+    min-width: 82px;
+}
+#sidebar_content{
+    padding: 12px;
+}
+#user {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+#user_avatar{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50px;
+}
+#user_infos {
+    display: flex;
+    flex-direction: column;
+}
+#user_infos span:last-child{
+    color: #6b6b6b;
+    font-size: 12px;
+}
+#side_items {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    list-style: none;
+   
+}
+.side-item{
+    padding: 14px;
+    cursor: pointer;
+    border-radius: 8px;
+   
+}   
+.side-item.active{
+    background-color: rgb(83, 103, 143);
+    
+}
+.side-item:hover:not(.active),
+#logout_btn:hover{
+    background-color: rgb(100,148,237);
+    
+}
+.side-item a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #b006060a;
+}
+.side-item.active a {
+    color: #000000;
+}
+.side-item a i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    gap: 14px;
+    color: #000000;
+}
+
+#logout{
+    border-top: 1px solid #ffffff;
+    padding: 12px;
+}
+#logout_btn{
+    border: none;
+    padding: 12px;
+    font-size: 14px;
+     display: flex;
+     gap: 20px;
+     align-items: center;
+     border-radius: 8px;
+     text-align: start;
+     cursor: pointer;;
+}
+#open_btn{
+    position: absolute;
+    top: 30px;
+    right: -10px;
+    background-color: rgb(83, 103, 143);
+    color: #ffffff;
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    border: none;
+    cursor: pointer;
+}
+#open_btn_icon{
+    transition: transform .3s ease;
+} 
+.open-sidebar #open_btn_icon{
+    transform: rotate(180deg);
+}
+.item-description{
+    width: 0px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    transition: all .6s;
+    height: 0px;
+}
+#sidebar.open-sidebar{
+    min-width: 15%;
+}
+#sidebar.open-sidebar .item-description{
+    width: 150px;
+    height: auto;
+    color: #000000;
+}
+#sidebar.open-sidebar .side-item a {
+    justify-content: flex-start;
+    gap: 14px;
+}
